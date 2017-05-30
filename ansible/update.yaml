@@ -30,6 +30,10 @@
         tags: [ 'ssh', 'all', 'ssh_only' ]
       }
     - {
+        role: 'roles/kraken.rbac',
+        tags: [ 'readiness', 'services', 'all', 'rbac_only' ]
+      }
+    - {
         role: 'roles/kraken.readiness',
         tags: [ 'readiness', 'services', 'all', 'readiness_only' ]
       }
