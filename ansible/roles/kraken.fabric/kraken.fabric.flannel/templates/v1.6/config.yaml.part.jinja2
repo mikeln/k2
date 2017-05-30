@@ -43,6 +43,7 @@ data:
 
   # Flannel network configuration. Mounted into the flannel container.
   # "Network": "10.244.0.0/16",
+<<<<<<< HEAD
   net-conf.json: |
     {
       "Network": "{{ fabricConfigVal.options.network.network }}",
@@ -51,6 +52,25 @@ data:
       "SubnetMax": "{{ fabricConfigVal.options.network.subnetMax}}", 
       "Backend": {
         "Type": "{{ fabricConfigVal.options.network.backend.type}}"
+=======
+  # "Network": "{{ cluster.network }}",
+  # "Network": "{{ cluster.providerConfig.vpc }}",
+  #   "Network": "{{ cluster.fabricConfig.options.network.network }}",
+  #   "SubnetLen": {{cluster.fabricConfig.options.network.subnetLen}}, 
+  #   "SubnetMin": "{{cluster.fabricConfig.options.network.subnetMin}}", 
+  #   "SubnetMax": "{{cluster.fabricConfig.options.network.subnetMax}}", 
+  #   "Backend": {
+  #     "Type": "{{cluster.fabricConfig.options.network.backend.type}}"
+  #   }
+  net-conf.json: |
+    {
+      "Network": "{{ cluster.fabricConfig.options.network.network }}",
+      "SubnetLen": {{cluster.fabricConfig.options.network.subnetLen}}, 
+      "SubnetMin": "{{cluster.fabricConfig.options.network.subnetMin}}", 
+      "SubnetMax": "{{cluster.fabricConfig.options.network.subnetMax}}", 
+      "Backend": {
+        "Type": "{{cluster.fabricConfig.options.network.backend.type}}"
+>>>>>>> fabric changes needed for rbac and 1.6
       }
     }
 
