@@ -43,6 +43,16 @@
       - rbac-dns-policy.yaml.jinja2
   when: "cluster.kubeAuth.authz.rbac is defined"
 
+- name: Generate kubedns RBAC policy file
+  template:
+    src: "{{ item }}"
+    dest: "{{ config_base | expanduser }}/{{ cluster.name }}/auth/rbac-dns-policy.yaml"
+  with_first_found:
+    - files:
+      - "{{ kubernetes_minor_versions[ cluster.name ] }}/dns.yaml.jinja2"
+      - rbac-dns-policy.yaml.jinja2
+  when: "cluster.kubeAuth.authz.rbac is defined"
+
 - name: Create the DNS Service Deployment
   template:
     src: "{{ item }}"
