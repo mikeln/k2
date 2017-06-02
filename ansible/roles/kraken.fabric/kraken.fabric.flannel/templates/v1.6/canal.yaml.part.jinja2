@@ -41,11 +41,7 @@ spec:
         # host.
         # image: quay.io/calico/node:v1.1.3
         - name: calico-node
-<<<<<<< HEAD
           image: {{fabricConfigVal.options.containers.calicoNode.location}}:{{fabricConfigVal.options.containers.calicoNode.version}}
-=======
-          image: {{cluster.fabricConfig.options.containers.calicoNode.location}}:{{cluster.fabricConfig.options.containers.calicoNode.version}}
->>>>>>> fabric changes needed for rbac and 1.6
           env:
             # Use Kubernetes API as the backing datastore.
             - name: DATASTORE_TYPE
@@ -93,11 +89,7 @@ spec:
         # and CNI network config file on each node.
         # image: quay.io/calico/cni:v1.8.3
         - name: install-cni
-<<<<<<< HEAD
           image: {{fabricConfigVal.options.containers.calicoCni.location}}:{{fabricConfigVal.options.containers.calicoCni.version}}
-=======
-          image: {{cluster.fabricConfig.options.containers.calicoCni.location}}:{{cluster.fabricConfig.options.containers.calicoCni.version}}
->>>>>>> fabric changes needed for rbac and 1.6
           command: ["/install-cni.sh"]
           env:
             # The CNI network config to install on each node.
@@ -119,11 +111,7 @@ spec:
         # for allocating subnets.
         # image: quay.io/coreos/flannel:v0.7.1
         - name: kube-flannel
-<<<<<<< HEAD
           image: {{fabricConfigVal.options.containers.flannel.location}}:{{fabricConfigVal.options.containers.flannel.version}}
-=======
-          image: {{cluster.fabricConfig.options.containers.flannel.location}}:{{cluster.fabricConfig.options.containers.flannel.version}}
->>>>>>> fabric changes needed for rbac and 1.6
           command: [ "/opt/bin/flanneld", "--ip-masq", "--kube-subnet-mgr" ]
           securityContext:
             privileged: true
