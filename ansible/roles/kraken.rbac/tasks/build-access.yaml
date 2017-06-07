@@ -3,6 +3,7 @@
 # kubernetes_minor_versions
 # kraken_endpoint
 #
+#
 - set_fact:
     cluster: "{{ a_cluster }}"
 
