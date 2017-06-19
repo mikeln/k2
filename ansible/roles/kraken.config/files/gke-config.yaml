@@ -91,6 +91,8 @@ definitions:
           weave_npc:
             version: 1.9.7
             location: weaveworks/weave-npc
+          network:
+            network: 10.128.0.0/10
     - &defaultWeaveFabric16
       name: defaultWeaveFabric16
       kind: fabric
@@ -103,6 +105,8 @@ definitions:
           weave_npc:
             version: 1.9.7
             location: weaveworks/weave-npc
+          network:
+            network: 10.128.0.0/10
     - &kubeVersionedWeaveFabric
       name: kubeVersionedWeaveFabric
       kind: versionedFabric
